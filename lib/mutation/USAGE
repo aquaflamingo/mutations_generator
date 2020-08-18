@@ -1,0 +1,10 @@
+Description:
+  Adds a new Mutation to your application. Provide the mutation name as CamelCased or snake_cased.
+   Pass a list of inputs as arguments with their types and if they are required or optional.
+	 This generates a mutation class in app/mutations.
+
+Example:
+    rails generate mutation PumpTheJam technotronic:model:required space_jam:string:optional
+
+    This will create:
+        app/mutations/pump_the_jam.rb

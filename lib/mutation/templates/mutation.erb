@@ -1,0 +1,29 @@
+class <%= klass_name %> < Mutations::Command
+
+<% if !required.empty? %>
+  required do
+<% required.each |i| %> 
+  <%= i.filter %> :<%= i.name %>
+<% end %>
+  end
+<% end %>
+
+
+<% if !optional.empty? %>
+  optional do
+<% optional.each |i| %> 
+  <%= i.filter %> :<%= i.name %>
+<% end %>
+  end
+<% end %>
+
+  def validate
+   # TODO your validation logic goes here
+   # add_error(:input, :symbol_error, "There has been a major malfunction")
+  end 
+
+  def execute
+   # TODO your business logic goes here
+  end
+
+end
