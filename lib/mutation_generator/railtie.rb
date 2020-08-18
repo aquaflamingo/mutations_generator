@@ -5,7 +5,7 @@ module MutationGenerator
     File.dirname __dir__
   end
 
-  class MutationGenerator < Rails::Railtie
+  class MutationGeneratorRailtie < Rails::Railtie
     mutation_generator_path = MutationGenerator.root.+'/mutation_generator/mutation/mutation_generator.rb'
 
     config.app_generators do
