@@ -21,8 +21,8 @@ class MutationGenerator < Rails::Generators::NamedBase
   def set_local_assigns!
     ins = inputs.clone
     attributes = ins.map { |i| GeneratedAttribute.parse(i) }
-    @required = attributes.select(&:required)
-    @optional = attributes.select(&:optional)
+    @required = attributes.select { |a| a.input_type == 'required' }
+    @optional = attributes.select { |a| a.input_type == 'optional' }
     @klass_name = file_name.camelize
   end
 
@@ -30,7 +30,7 @@ class MutationGenerator < Rails::Generators::NamedBase
     FILTER_OPTIONS = %w[string integer model hash array boolean date duck input symbol time].freeze
     INPUT_OPTIONS = %w[required optional].freeze
 
-    attr_accessor :name, :filter, :input
+    attr_accessor :name, :filter, :input_type
 
     class << self
       def parse(definition)
@@ -48,7 +48,7 @@ class MutationGenerator < Rails::Generators::NamedBase
       end
 
       def validate_input_type!(input_type)
-        unless INPUT_OPTIONS.include?(filter)
+        unless INPUT_OPTIONS.include?(input_type)
           raise "invalid input type must be one of #{INPUT_OPTIONS}"
         end
 
@@ -57,7 +57,7 @@ class MutationGenerator < Rails::Generators::NamedBase
 
       def validate_filter!(filter)
         unless FILTER_OPTIONS.include?(filter)
-          raise "invalid filter type must be one of #{FILTER_FILTER_OPTIONS}"
+          raise "invalid filter type must be one of #{FILTER_OPTIONS}"
         end
 
         filter

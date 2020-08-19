@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mutation_generator (0.1.0)
+    mutations_generator (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -136,8 +136,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  mutation_generator!
   mutations (~> 0.9.1)
+  mutations_generator!
   rails (~> 6.0.3.1)
   rake (~> 12.0)
 
