@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative 'lib/mutation_generator/version'
+require_relative 'lib/mutations_generator/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'mutation_generator'
-  spec.version       = MutationGenerator::VERSION
+  spec.name          = 'mutations_generator'
+  spec.version       = MutationsGenerator::VERSION
   spec.authors       = ['robertsimoes']
   spec.email         = ['robertsimoes@users.noreply.github.com']
 

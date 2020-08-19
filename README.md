@@ -1,4 +1,4 @@
-# MutationGenerator
+# MutationsGenerator
 
 Rails generator extension for the [mutations](https://github.com/cypriss/mutations) framework.
 
@@ -7,7 +7,7 @@ Rails generator extension for the [mutations](https://github.com/cypriss/mutatio
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'mutation_generator'
+gem 'mutations_generator'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install mutation_generator
+    $ gem install mutations_generator
 
 ## Usage
 

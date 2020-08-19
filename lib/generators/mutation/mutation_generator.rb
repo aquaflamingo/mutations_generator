@@ -65,8 +65,8 @@ class MutationGenerator < Rails::Generators::NamedBase
     end
 
     def initialize(name, filter, input_type)
-      @name           = name
-      @filter           = filter || 'string'
+      @name = name
+      @filter = filter || 'string'
       @input_type = input_type || 'required'
     end
   end
