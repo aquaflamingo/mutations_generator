@@ -1,1 +1,0 @@
-rm -f mutations_generator-0.1.0.gem && gem build mutations_generator.gemspec && gem install mutations_generator-0.1.0.gem

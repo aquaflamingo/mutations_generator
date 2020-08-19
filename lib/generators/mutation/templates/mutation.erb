@@ -1,19 +1,20 @@
 class <%= @klass_name %> < Mutations::Command
-<% if !@required.empty? %>
-  required do
-  <% @required.each do |i|%>
-    <%= i.filter %> :<%= i.name %>
-  <% end %>
-  end
-<% end %>
 
-<% if !@optional.empty? %>
+<% if !@required.empty? -%>
+  required do
+  <% @required.each do |i| -%>
+   <%= i.filter %> :<%= i.name %>
+  <% end -%>
+end
+<% end -%>
+
+<% if !@optional.empty? -%>
   optional do
-  <% @optional.each do |i|%>
-    <%= i.filter %> :<%= i.name %>
-  <% end %>
-  end
-<% end %>
+  <% @optional.each do |i| -%>
+   <%= i.filter %> :<%= i.name %>
+  <% end -%>
+end
+<% end -%>
 
   def validate
    # TODO your validation logic goes here
