@@ -8,3 +8,4 @@ Example:
 
     This will create:
         app/mutations/pump_the_jam.rb
+        spec/mutations/pump_the_jam_spec.rb

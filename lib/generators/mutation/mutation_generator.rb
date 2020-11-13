@@ -16,6 +16,13 @@ class MutationGenerator < Rails::Generators::NamedBase
     set_local_assigns!
 
     template 'mutation.erb', generator_path
+
+    # Create spec if application uses specs
+    spec_mutation_dir_path = 'spec/mutation/'
+    spec_generator_path = spec_mutation_dir_path + "/#{file_name}_spec.rb"
+
+    Dir.mkdir(spec_mutation_dir_path) if Dir.exist?('spec') && !File.exist?(spec_mutation_dir_path) 
+    template 'mutation_spec.erb', spec_generator_path if Dir.exist?('spec')
   end
 
   def set_local_assigns!
