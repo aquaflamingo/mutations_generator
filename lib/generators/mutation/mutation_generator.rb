@@ -18,7 +18,7 @@ class MutationGenerator < Rails::Generators::NamedBase
     template 'mutation.erb', generator_path
 
     # Create spec if application uses specs
-    spec_mutation_dir_path = 'spec/mutation/'
+    spec_mutation_dir_path = 'spec/mutations/'
     spec_generator_path = spec_mutation_dir_path + "/#{file_name}_spec.rb"
 
     Dir.mkdir(spec_mutation_dir_path) if Dir.exist?('spec') && !File.exist?(spec_mutation_dir_path) 
